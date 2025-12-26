@@ -30,7 +30,8 @@ class MyAppTheme {
     appBarTheme: const AppBarTheme(
       elevation: 0,
       shadowColor: AppColors.white,
-      color: AppColors.white,
+      foregroundColor: AppColors.white,
+      backgroundColor: AppColors.white,
     ),
     dialogTheme: const DialogThemeData(
       backgroundColor: AppColors.white,
