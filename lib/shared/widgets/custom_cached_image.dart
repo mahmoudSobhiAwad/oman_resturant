@@ -1,3 +1,4 @@
+import 'package:app_core/shared/widgets/custom_asset_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,11 +40,11 @@ class CustomCachedImage extends StatelessWidget {
           color: AppColors.black.withValues(alpha: 0.1),
         ),
         child: Center(
-          child: SvgPicture.asset(
+          child: CustomAssetImage(
             fit: BoxFit.scaleDown,
             width: width,
             height: height,
-            AppImages.errorImage,
+            path: AppImages.emptyImage,
           ),
         ),
       );
@@ -71,11 +72,11 @@ class CustomCachedImage extends StatelessWidget {
             color: AppColors.grayA6.withValues(alpha: 0.25),
           ),
           child: Center(
-            child: SvgPicture.asset(
+            child: CustomAssetImage(
               fit: BoxFit.scaleDown,
               width: width,
               height: height,
-              AppImages.errorImage,
+              path: AppImages.emptyImage,
             ),
           ),
         ),

@@ -75,13 +75,11 @@ class CustomSelectorFieldState<T> extends State<CustomSelectorField<T>>
   void didUpdateWidget(CustomSelectorField<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    // لو الـ menu مفتوح والـ list اتغير، اقفله وافتحه تاني
     if (isOpen && widget.list.length != _previousListLength) {
       _previousListLength = widget.list.length;
 
-      // اقفل الـ menu الحالي
       if (_menuContext != null && _menuContext!.mounted) {
-        Navigator.of(_menuContext!).pop();
+        _menuContext!.pop();
 
         Future.delayed(const Duration(milliseconds: 150), () {
           if (mounted) {
@@ -200,7 +198,6 @@ class CustomSelectorFieldState<T> extends State<CustomSelectorField<T>>
       onTap: () {
         widget.onTap?.call();
         if (widget.list.isNotEmpty) {
-          // يتم فك التركيز قبل الفتح لضمان عمل showMenu بشكل صحيح
           if (FocusScope.of(context).hasFocus) {
             FocusScope.of(context).unfocus();
             Future.delayed(const Duration(milliseconds: 200), () {

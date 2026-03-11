@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class CustomAdaptiveLayout extends StatelessWidget {
@@ -18,15 +16,16 @@ class CustomAdaptiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraint) {
-      log("====== CONST WIDTH====${constraint.maxWidth}");
-      if (constraint.maxWidth < phoneMaxWidth) {
-        return mobileLayout(context);
-      } else if (constraint.maxWidth < tabletMaxWidth) {
-        return tabletLayout(context);
-      } else {
-        return desktopLayout(context);
-      }
-    });
+    return LayoutBuilder(
+      builder: (context, constraint) {
+        if (constraint.maxWidth < phoneMaxWidth) {
+          return mobileLayout(context);
+        } else if (constraint.maxWidth < tabletMaxWidth) {
+          return tabletLayout(context);
+        } else {
+          return desktopLayout(context);
+        }
+      },
+    );
   }
 }

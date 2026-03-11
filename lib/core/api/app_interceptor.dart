@@ -78,7 +78,6 @@ class AppInterceptors extends Interceptor {
           } else {
             AppSharedPreferences.remove(key: AppConstants.accessToken);
             AppSharedPreferences.remove(key: AppConstants.refreshToken);
-            appRouter.go(AppRouter.login);
           }
         }
       }

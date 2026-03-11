@@ -81,7 +81,7 @@ class MyAppTheme {
       selectionColor: AppColors.primary.withValues(alpha: 0.1),
       selectionHandleColor: AppColors.primary,
     ),
-    fontFamily: AppConstants.arabicFontFamily,
+    fontFamily: AppConstants.fontFamily,
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -170,7 +170,7 @@ class MyAppTheme {
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     ),
-    fontFamily: AppConstants.arabicFontFamily,
+    fontFamily: AppConstants.fontFamily,
     scaffoldBackgroundColor: AppColors.black,
     primaryColor: AppColors.primary,
     bannerTheme: const MaterialBannerThemeData(

@@ -11,6 +11,9 @@ class CustomContainer extends StatelessWidget {
     this.child,
     this.enableShadow = false,
     this.gradientColors,
+    this.border,
+    this.borderRadiusGeometry,
+    this.height,
   });
 
   final Color? backGroundColor;
@@ -19,12 +22,18 @@ class CustomContainer extends StatelessWidget {
   final Widget? child;
   final bool enableShadow;
   final Gradient? gradientColors;
+  final BoxBorder? border;
+  final double? height;
+  final BorderRadiusGeometry? borderRadiusGeometry;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height,
       padding: padding ?? const EdgeInsets.all(12),
       decoration: BoxDecoration(
+        border: border,
+
         boxShadow: enableShadow
             ? [
                 BoxShadow(
@@ -35,7 +44,9 @@ class CustomContainer extends StatelessWidget {
               ]
             : null,
 
-        borderRadius: BorderRadius.all(Radius.circular(borderRaduis ?? 12)),
+        borderRadius:
+            borderRadiusGeometry ??
+            BorderRadius.all(Radius.circular(borderRaduis ?? 12)),
         gradient: gradientColors,
         color: gradientColors == null
             ? (backGroundColor ?? AppColors.white)

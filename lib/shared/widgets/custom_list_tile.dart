@@ -4,7 +4,6 @@ import '../../../core/utils/theme/custom_app_font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
     super.key,
@@ -144,11 +143,11 @@ class CustomListTile extends StatelessWidget {
                 ),
                 if (enableArrow) const SizedBox(width: 12),
                 if (enableArrow)
-                  RotatedBox(
-                    quarterTurns: 2,
-                    child: SvgPicture.asset(AppIcons.arrowBack),
-                  ),
-                if (trailing != null) trailing!,
+                  // RotatedBox(
+                  //   quarterTurns: 2,
+                  //   child: SvgPicture.asset(AppIcons.arrowBack),
+                  // ),
+                  if (trailing != null) trailing!,
               ],
             ),
           ],

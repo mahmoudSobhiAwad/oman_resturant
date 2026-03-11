@@ -1,4 +1,5 @@
-import '../../core/network/mony_helper.dart';
+import 'package:app_core/core/utils/extensions/money_format.dart';
+
 import '../../core/utils/theme/app_colors.dart';
 import '../../core/utils/theme/custom_app_font_styles.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class CustomPriceAfterAndBefore extends StatelessWidget {
           FittedBox(
             child: Text.rich(
               TextSpan(
-                text: MonyHelper.formatMoney(priceAfter?.toDouble() ?? 20000),
+                text: (priceAfter?.toDouble() ?? 20000).formatMoney(),
                 style:
                     priceStyle ??
                     CustomAppFontStyle.bold14.copyWith(color: AppColors.gray26),
@@ -50,7 +51,7 @@ class CustomPriceAfterAndBefore extends StatelessWidget {
     return Row(
       children: [
         Text(
-          MonyHelper.formatMoney(priceBefore?.toDouble() ?? 405697),
+          (priceBefore?.toDouble() ?? 405697).formatMoney(),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: CustomAppFontStyle.light12.copyWith(
@@ -64,7 +65,7 @@ class CustomPriceAfterAndBefore extends StatelessWidget {
         FittedBox(
           child: Text.rich(
             TextSpan(
-              text: MonyHelper.formatMoney(priceAfter?.toDouble() ?? 20000),
+              text: (priceAfter?.toDouble() ?? 20000).formatMoney(),
               style:
                   priceStyle ??
                   CustomAppFontStyle.bold14.copyWith(color: AppColors.gray26),

@@ -40,7 +40,7 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         elevation: 0,
         forceMaterialTransparency: true,
-        //backgroundColor: AppColors.white,
+
         automaticallyImplyLeading: false,
         centerTitle: centerTitle,
         titleSpacing: titleSpacing,
@@ -51,25 +51,25 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               )
             : null,
         actions: trailing,
-        leading: (enableLeading && titleWidget != null)
-            ? IconButton(
-                onPressed: onBack ?? () => context.pop(),
-                icon: SvgPicture.asset(leadingIconPath ?? AppIcons.arrowBack),
-              )
-            : null,
+        // leading: (enableLeading && titleWidget != null)
+        //     ? IconButton(
+        //         onPressed: onBack ?? () => context.pop(),
+        //         icon: SvgPicture.asset(leadingIconPath ?? AppIcons.arrowBack),
+        //       )
+        //     : null,
         title:
             titleWidget ??
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               spacing: 8,
               children: [
-                if (enableLeading)
-                  IconButton(
-                    onPressed: onBack ?? () => context.pop(),
-                    icon: SvgPicture.asset(
-                      leadingIconPath ?? AppIcons.arrowBack,
-                    ),
-                  ),
+                // if (enableLeading)
+                //   IconButton(
+                //     onPressed: onBack ?? () => context.pop(),
+                //     icon: SvgPicture.asset(
+                //       leadingIconPath ?? AppIcons.arrowBack,
+                //     ),
+                //   ),
                 Flexible(
                   child: Padding(
                     padding: const EdgeInsetsDirectional.only(end: 16.0),

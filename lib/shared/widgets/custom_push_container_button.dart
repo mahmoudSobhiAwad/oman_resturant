@@ -25,10 +25,11 @@ class CustomPushButton extends StatelessWidget {
     this.label,
     this.minSize,
     this.boxBorder,
+    this.backGradient,
   });
 
   final EdgeInsetsGeometry? margin;
-  final EdgeInsets? padding;
+  final EdgeInsetsDirectional? padding;
   final Widget? child;
   final Color? backgroundColor;
   final void Function()? onTap;
@@ -45,6 +46,7 @@ class CustomPushButton extends StatelessWidget {
   final String? label;
   final void Function()? onLongPressed;
   final Size? minSize;
+  final Gradient? backGradient;
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +60,7 @@ class CustomPushButton extends StatelessWidget {
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: backgroundColor,
-              gradient: backgroundColor == null
-                  ? const LinearGradient(
-                      tileMode: TileMode.decal,
-                      colors: [AppColors.gray5D, AppColors.black],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    )
-                  : null,
+              gradient: backgroundColor == null ? backGradient : null,
               borderRadius: BorderRadius.circular(radius ?? 12),
               border: boxBorder,
             ),
@@ -74,11 +69,10 @@ class CustomPushButton extends StatelessWidget {
               onPressed: isLoading ? null : onTap,
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                // make button background transparent so the gradient shows
                 backgroundColor: backgroundColor ?? Colors.transparent,
                 disabledBackgroundColor: Colors.transparent,
-                surfaceTintColor: surfaceTintColor ?? AppColors.white,
-                overlayColor: overlayColor ?? AppColors.white,
+                surfaceTintColor: surfaceTintColor ?? Colors.transparent,
+                overlayColor: overlayColor ?? Colors.transparent,
                 minimumSize: minSize,
                 padding:
                     padding ??
@@ -87,7 +81,7 @@ class CustomPushButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(radius ?? 12),
                   side: border ?? BorderSide.none,
                 ),
-                shadowColor: shadowColor ?? AppColors.gray5D,
+                shadowColor: shadowColor ?? Colors.transparent,
               ),
               child: isLoading
                   ? Center(

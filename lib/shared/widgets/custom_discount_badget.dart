@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/material.dart';
 
 import '../../core/utils/theme/app_colors.dart';
@@ -10,7 +9,7 @@ class CustomDiscountBadget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(
-      angle: context.locale.languageCode == 'en' ? 0.7 : -0.7,
+      angle: 0.7,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 40),
         color: AppColors.pinkF312,

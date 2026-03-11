@@ -151,13 +151,6 @@ class _ImagePreviewState extends State<ImagePreview> {
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.only(bottom: 50.0),
-          //   child: CustomIndicatorRow(
-          //     currIndex: _currIndex,
-          //     sliderLength: widget.networkUrls.length,
-          //   ),
-          // ),
         ],
       ),
     );

@@ -1,18 +1,10 @@
 import 'dart:io';
-import 'package:app_core/core/enums/role_enum.dart';
+import 'package:app_core/core/routing/routes.dart';
+import 'package:app_core/features/app_layout/presentation/pages/app_layout.dart';
+import 'package:app_core/features/meal/presentation/pages/meal_details_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../shared/app_layout/presentation/pages/customer_layout_page.dart';
-import '../../shared/auth/presentation/pages/forget_pass_page.dart';
-import '../../shared/auth/presentation/pages/login_page.dart';
-import '../../shared/auth/presentation/pages/sign_up_page.dart';
-import '../../shared/auth/presentation/pages/terms_and_conditions.dart';
-import '../storage/cache_helper.dart';
-import '../utils/constants/app_constants.dart';
-import 'routes.dart';
-
-final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
 
 // Animation Types Enum
 enum AnimationType {
@@ -27,6 +19,11 @@ enum AnimationType {
   cupertino,
 }
 
+bool checkIsIOS() {
+  if (kIsWeb) return false;
+  return Platform.isIOS;
+}
+
 // Custom Page Builder with Animation Support
 Page<T> buildAnimatedPage<T extends Object?>({
   required Widget child,
@@ -36,7 +33,7 @@ Page<T> buildAnimatedPage<T extends Object?>({
   Curve curve = Curves.easeInOut,
 }) {
   // Use Cupertino page for iOS
-  if (Platform.isIOS && animationType == AnimationType.cupertino) {
+  if (checkIsIOS() && animationType == AnimationType.cupertino) {
     return CupertinoPage<T>(key: key, child: child);
   }
 
@@ -206,108 +203,31 @@ class _PageBasedPageRoute<T> extends PageRoute<T> {
 }
 
 final GoRouter appRouter = GoRouter(
-  observers: [routeObserver],
-  initialLocation:
-      AppSharedPreferences.getString(key: AppConstants.accessToken) != null
-      ? AppRouter.customerAppLayout
-      // ? getRoleEnum() == RoleEnum.user
-      //       ? AppRouter.customerAppLayout
-      //       : AppRouter.storeLayout
-      // : getRoleEnum() == null
-      // ? AppRouter.splashScreen
-      : AppRouter.login,
+  initialLocation: AppRouter.appLayout,
   routes: [
-    // GoRoute(
-    //   path: AppRouter.splashScreen,
-    //   name: AppRouter.splashScreen,
-    //   pageBuilder: (context, state) => buildAnimatedPage(
-    //     key: state.pageKey,
-    //     child: const VideoSplashScreen(),
-    //     animationType: AnimationType.scale,
-    //     duration: const Duration(milliseconds: 400),
-    //     curve: Curves.elasticOut,
-    //   ),
-    // ),
     GoRoute(
-      path: AppRouter.login,
-      name: AppRouter.login,
-      // redirect: (context, state) {
-      //   if (getRoleEnum() == null) {
-      //     return AppRouter.splashScreen;
-      //   }
-      //   return null;
-      // },
+      path: AppRouter.appLayout,
+      name: AppRouter.appLayout,
       pageBuilder: (context, state) => buildAnimatedPage(
         key: state.pageKey,
-        child: LoginPage(roleEnum: getRoleEnum() ?? RoleEnum.user),
-        animationType: Platform.isIOS
+        child: const AppLayout(),
+        animationType: checkIsIOS()
             ? AnimationType.cupertino
-            : AnimationType.slideFromRight,
-      ),
-    ),
-
-    GoRoute(
-      path: AppRouter.forgetPassword,
-      name: AppRouter.forgetPassword,
-      pageBuilder: (context, state) => buildAnimatedPage(
-        key: state.pageKey,
-        child: const ForgetPassPage(),
-        animationType: Platform.isIOS
-            ? AnimationType.cupertino
-            : AnimationType.slideFromBottom,
-      ),
-    ),
-
-    GoRoute(
-      path: AppRouter.signUp,
-      name: AppRouter.signUp,
-      pageBuilder: (context, state) => buildAnimatedPage(
-        key: state.pageKey,
-        child: const SignUp(),
-        animationType: Platform.isIOS
-            ? AnimationType.cupertino
-            : AnimationType.slideFromRight,
-      ),
-    ),
-
-    GoRoute(
-      path: AppRouter.termsAndConditions,
-      name: AppRouter.termsAndConditions,
-      pageBuilder: (context, state) => buildAnimatedPage(
-        key: state.pageKey,
-        child: TermsAndConditions(),
-        animationType: AnimationType.slideFromBottom,
-      ),
-    ),
-
-    GoRoute(
-      path: AppRouter.customerAppLayout,
-      name: AppRouter.customerAppLayout,
-      pageBuilder: (context, state) => buildAnimatedPage(
-        key: state.pageKey,
-        child: CustomerAppLayout(initialIndex: state.extra as int? ?? 0),
-        animationType: AnimationType.fade,
+            : AnimationType.fade,
         duration: const Duration(milliseconds: 500),
       ),
     ),
-    // GoRoute(
-    //   path: AppRouter.failedPaymentView,
-    //   name: AppRouter.failedPaymentView,
-    //   pageBuilder: (context, state) => buildAnimatedPage(
-    //     key: state.pageKey,
-    //     child: const FailedPaymentView(),
-    //     animationType: AnimationType.fade,
-    //     duration: const Duration(milliseconds: 500),
-    //   ),
-    // ),
+    GoRoute(
+      path: AppRouter.mealDetails,
+      name: AppRouter.mealDetails,
+      pageBuilder: (context, state) => buildAnimatedPage(
+        key: state.pageKey,
+        child: const MealDetailsView(),
+        animationType: checkIsIOS()
+            ? AnimationType.cupertino
+            : AnimationType.slideFromRight,
+        duration: const Duration(milliseconds: 500),
+      ),
+    ),
   ],
 );
-
-RoleEnum? getRoleEnum() {
-  final value = AppSharedPreferences.getString(key: AppConstants.roleName);
-  if (value == null) return null;
-  RoleEnum? role = RoleEnum.values.byName(
-    AppSharedPreferences.getString(key: AppConstants.roleName) ?? "user",
-  );
-  return role;
-}

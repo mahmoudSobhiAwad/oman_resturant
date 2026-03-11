@@ -10,23 +10,30 @@ class AppSharedPreferences {
   static late SharedPreferences sharedPreferences;
 
   static Future<void> initialSharedPreference() async {
-    await SharedPreferences.getInstance()
-        .then((value) => sharedPreferences = value);
+    await SharedPreferences.getInstance().then(
+      (value) => sharedPreferences = value,
+    );
   }
 
-//***************  set data *********** */
-  static Future<void> setString(
-      {required String value, required String key}) async {
+  //***************  set data *********** */
+  static Future<void> setString({
+    required String value,
+    required String key,
+  }) async {
     await sharedPreferences.setString(key, value);
   }
 
-  static Future<void> setListString(
-      {required List<String> value, required String key}) async {
+  static Future<void> setListString({
+    required List<String> value,
+    required String key,
+  }) async {
     await sharedPreferences.setStringList(key, value);
   }
 
-  static Future<void> setBool(
-      {required bool value, required String key}) async {
+  static Future<void> setBool({
+    required bool value,
+    required String key,
+  }) async {
     await sharedPreferences.setBool(key, value);
   }
 
@@ -34,8 +41,10 @@ class AppSharedPreferences {
     await sharedPreferences.setInt(key, value);
   }
 
-  static Future<void> setDouble(
-      {required double value, required String key}) async {
+  static Future<void> setDouble({
+    required double value,
+    required String key,
+  }) async {
     await sharedPreferences.setDouble(key, value);
   }
 
@@ -77,35 +86,4 @@ class AppSharedPreferences {
   static Future<void> clearAll() async {
     await sharedPreferences.clear();
   }
-
-// static String getAppLang() {
-//   String? lang = sharedPreferences.getString(language);
-//
-//   if (lang != null && lang.isNotEmpty) {
-//     return lang;
-//   } else {
-//     return LanguageType.arabic.getValue();
-//   }
-// }
-
-// static Future<void> changeAppLang() async {
-//   String currentLang = getAppLang();
-//
-//   if (currentLang == LanguageType.arabic.getValue()) {
-//     await sharedPreferences.setString(
-//         language, LanguageType.arabic.getValue());
-//   } else {
-//     await sharedPreferences.setString(
-//         language, LanguageType.arabic.getValue());
-//   }
-// }
-
-// static Future<Locale> getLocal() async {
-//   String currentLang = getAppLang();
-//   if (currentLang == LanguageType.arabic.getValue()) {
-//     return arabicLocal;
-//   } else {
-//     return englishLocal;
-//   }
-// }
 }

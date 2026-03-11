@@ -1,7 +1,5 @@
-import '../../core/utils/theme/app_animations.dart';
 import '../../shared/widgets/custom_push_container_button.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../core/utils/theme/custom_app_font_styles.dart';
 
@@ -39,12 +37,6 @@ class ErrorPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (enableAnimation)
-                LottieBuilder.asset(
-                  AppAnimations.noInternet,
-                  width: (width ?? 300),
-                  height: (height ?? 300),
-                ),
               Text(
                 errorMessage.isNotEmpty
                     ? (errorMessage ==
