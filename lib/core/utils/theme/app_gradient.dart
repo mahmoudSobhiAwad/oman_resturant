@@ -23,13 +23,8 @@ class AppGradient {
     stops: [0.0, 0.54, 1.0],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-  ).withOpacity(0.3);
-  static const Gradient productBadge = LinearGradient(
-    colors: [AppColors.red16, AppColors.red77],
-    stops: [0.0, 1.0],
-    begin: AlignmentDirectional.centerStart,
-    end: AlignmentDirectional.centerEnd,
   );
+
   static const Gradient cover = LinearGradient(
     colors: [
       Color(0xFFC6C3C3),

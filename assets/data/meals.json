@@ -1,0 +1,114 @@
+[
+  {
+    "id": "1",
+    "name": "Sushi Boat",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 49.95,
+    "is_trending": true,
+    "is_main_dish": true,
+    "is_price_include_service": false,
+    "preparation": [
+      { "id": "1", "name": "Prepare Rice" },
+      { "id": "2", "name": "Slice Fish" },
+      { "id": "3", "name": "Roll & Plate" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Grilled Salmon",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 34.50,
+    "is_trending": false,
+    "is_main_dish": true,
+    "is_price_include_service": true,
+    "preparation": [
+      { "id": "1", "name": "Marinate" },
+      { "id": "2", "name": "Grill" },
+      { "id": "3", "name": "Plate & Serve" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Wagyu Tenderloin",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 89.00,
+    "is_trending": true,
+    "is_main_dish": true,
+    "is_price_include_service": false,
+    "preparation": [
+      { "id": "1", "name": "Season Meat" },
+      { "id": "2", "name": "Slow Cook" },
+      { "id": "3", "name": "Rest & Slice" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Truffle Risotto",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 27.00,
+    "is_trending": false,
+    "is_main_dish": false,
+    "is_price_include_service": true,
+    "preparation": [
+      { "id": "1", "name": "Toast Rice" },
+      { "id": "2", "name": "Add Broth" },
+      { "id": "3", "name": "Finish with Truffle" }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Omani Shuwa Lamb",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 42.00,
+    "is_trending": true,
+    "is_main_dish": true,
+    "is_price_include_service": false,
+    "preparation": [
+      { "id": "1", "name": "Marinate with Spices" },
+      { "id": "2", "name": "Wrap in Banana Leaves" },
+      { "id": "3", "name": "Slow Cook Underground" }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Chocolate Lava Cake",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 18.00,
+    "is_trending": false,
+    "is_main_dish": false,
+    "is_price_include_service": true,
+    "preparation": [
+      { "id": "1", "name": "Mix Batter" },
+      { "id": "2", "name": "Bake" },
+      { "id": "3", "name": "Plate with Ice Cream" }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Lobster Bisque",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 22.00,
+    "is_trending": true,
+    "is_main_dish": false,
+    "is_price_include_service": false,
+    "preparation": [
+      { "id": "1", "name": "Cook Lobster" },
+      { "id": "2", "name": "Blend Bisque" },
+      { "id": "3", "name": "Garnish & Serve" }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Caesar Salad",
+    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "price": 16.50,
+    "is_trending": false,
+    "is_main_dish": false,
+    "is_price_include_service": true,
+    "preparation": [
+      { "id": "1", "name": "Prepare Dressing" },
+      { "id": "2", "name": "Toss Lettuce" },
+      { "id": "3", "name": "Add Croutons & Cheese" }
+    ]
+  }
+]

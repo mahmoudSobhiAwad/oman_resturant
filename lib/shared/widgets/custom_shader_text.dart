@@ -1,4 +1,4 @@
-import 'package:task_app/core/utils/theme/app_gradient.dart';
+import 'package:oman_resturant/core/utils/theme/app_gradient.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomShaderText extends StatelessWidget {

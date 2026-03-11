@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
-import 'package:task_app/core/animation/fade_transition_animation.dart';
-import 'package:task_app/core/animation/scale_transition_animation.dart';
-import 'package:task_app/core/routing/routes.dart';
-import 'package:task_app/core/utils/extensions/sliver_to_widget.dart';
-import 'package:task_app/core/utils/theme/app_colors.dart';
-import 'package:task_app/core/utils/theme/app_icons.dart';
-import 'package:task_app/core/utils/theme/app_images.dart';
-import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
-import 'package:task_app/features/app_layout/presentation/widgets/atmosphere_slider.dart';
-import 'package:task_app/features/app_layout/presentation/widgets/custom_meal_card.dart';
-import 'package:task_app/shared/widgets/custom_asset_image.dart';
-import 'package:task_app/shared/widgets/custom_liquid_button.dart';
-import 'package:task_app/shared/widgets/custom_shader_text.dart';
-import 'package:task_app/shared/widgets/custom_sliver_app_bar.dart';
+import 'package:oman_resturant/core/animation/fade_transition_animation.dart';
+import 'package:oman_resturant/core/animation/scale_transition_animation.dart';
+import 'package:oman_resturant/core/routing/routes.dart';
+import 'package:oman_resturant/core/utils/extensions/sliver_to_widget.dart';
+import 'package:oman_resturant/core/utils/theme/app_colors.dart';
+import 'package:oman_resturant/core/utils/theme/app_icons.dart';
+import 'package:oman_resturant/core/utils/theme/app_images.dart';
+import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/features/app_layout/presentation/widgets/atmosphere_slider.dart';
+import 'package:oman_resturant/features/app_layout/presentation/widgets/custom_meal_card.dart';
+import 'package:oman_resturant/shared/widgets/custom_asset_image.dart';
+import 'package:oman_resturant/shared/widgets/custom_liquid_button.dart';
+import 'package:oman_resturant/shared/widgets/custom_shader_text.dart';
+import 'package:oman_resturant/shared/widgets/custom_sliver_app_bar.dart';
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
@@ -130,7 +130,6 @@ class _AppLayoutState extends State<AppLayout> {
                       child: CustomMealCard(
                         height: isShort ? 120 : 170,
                         width: 200,
-                        shadowHeight: isShort ? 50 : 72,
                         isTrending: index % 2 == 0,
                       ),
                     );

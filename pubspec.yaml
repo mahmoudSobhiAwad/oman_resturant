@@ -1,4 +1,4 @@
-name: task_app
+name: oman_resturant
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -73,6 +73,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/fonts/
+    - assets/data/
   # example:
   fonts:
     - family: Satoshi
@@ -92,3 +93,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_native_splash:
+  color: "#000000"
+  image: assets/images/app_logo.png
+
+  android_12:
+    image: assets/images/android12_splash.png

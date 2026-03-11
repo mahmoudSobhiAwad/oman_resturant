@@ -1,4 +1,4 @@
-import 'package:task_app/shared/widgets/custom_asset_image.dart';
+import 'package:oman_resturant/shared/widgets/custom_asset_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 

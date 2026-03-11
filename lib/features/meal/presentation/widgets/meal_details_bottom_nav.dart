@@ -1,11 +1,11 @@
-import 'package:task_app/core/utils/theme/app_colors.dart';
-import 'package:task_app/core/utils/theme/app_gradient.dart';
-import 'package:task_app/core/utils/theme/app_icons.dart';
-import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
-import 'package:task_app/shared/widgets/custom_asset_image.dart';
-import 'package:task_app/shared/widgets/custom_liquid_button.dart';
-import 'package:task_app/shared/widgets/custom_push_container_button.dart';
-import 'package:task_app/shared/widgets/custom_shader_text.dart';
+import 'package:oman_resturant/core/utils/theme/app_colors.dart';
+import 'package:oman_resturant/core/utils/theme/app_gradient.dart';
+import 'package:oman_resturant/core/utils/theme/app_icons.dart';
+import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/shared/widgets/custom_asset_image.dart';
+import 'package:oman_resturant/shared/widgets/custom_liquid_button.dart';
+import 'package:oman_resturant/shared/widgets/custom_push_container_button.dart';
+import 'package:oman_resturant/shared/widgets/custom_shader_text.dart';
 import 'package:flutter/material.dart';
 
 class MealDetailsBottomNav extends StatelessWidget {

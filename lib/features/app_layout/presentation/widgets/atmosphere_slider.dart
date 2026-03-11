@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_app/core/animation/scale_transition_animation.dart';
-import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
-import 'package:task_app/shared/widgets/custom_cached_image.dart';
+import 'package:oman_resturant/core/animation/scale_transition_animation.dart';
+import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/shared/widgets/custom_cached_image.dart';
 
 class AtompsphereSlider extends StatelessWidget {
   const AtompsphereSlider({super.key});

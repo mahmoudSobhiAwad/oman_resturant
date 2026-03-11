@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:task_app/core/utils/theme/app_colors.dart';
-import 'package:task_app/core/utils/theme/app_gradient.dart';
-import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
-import 'package:task_app/shared/widgets/custom_cached_image.dart';
-import 'package:task_app/shared/widgets/custom_container.dart';
-import 'package:task_app/shared/widgets/custom_liquid_button.dart';
+import 'package:oman_resturant/core/utils/theme/app_colors.dart';
+import 'package:oman_resturant/core/utils/theme/app_gradient.dart';
+import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/shared/widgets/custom_cached_image.dart';
+import 'package:oman_resturant/shared/widgets/custom_container.dart';
+import 'package:oman_resturant/shared/widgets/custom_liquid_button.dart';
 
 class CustomMealCard extends StatelessWidget {
   const CustomMealCard({
@@ -14,12 +14,10 @@ class CustomMealCard extends StatelessWidget {
     required this.width,
     required this.height,
     this.isTrending = false,
-    this.shadowHeight = 16,
   });
   final double width;
   final double height;
   final bool isTrending;
-  final double shadowHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +57,9 @@ class CustomMealCard extends StatelessWidget {
             ),
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+              blendMode: BlendMode.srcOver,
               child: CustomContainer(
-                height: 50,
+                height: 45,
                 borderRaduis: 0,
                 gradientColors: AppGradient.productGradient,
               ),

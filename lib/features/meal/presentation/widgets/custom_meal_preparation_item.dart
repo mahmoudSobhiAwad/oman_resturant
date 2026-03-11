@@ -1,6 +1,6 @@
-import 'package:task_app/core/utils/theme/app_colors.dart';
-import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
-import 'package:task_app/shared/widgets/custom_container.dart';
+import 'package:oman_resturant/core/utils/theme/app_colors.dart';
+import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/shared/widgets/custom_container.dart';
 import 'package:flutter/material.dart';
 
 class CustomMealPreparationItem extends StatelessWidget {

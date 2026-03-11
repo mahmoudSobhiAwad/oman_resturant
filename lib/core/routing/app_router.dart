@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:task_app/core/routing/routes.dart';
-import 'package:task_app/features/app_layout/presentation/pages/app_layout.dart';
-import 'package:task_app/features/meal/presentation/pages/meal_details_view.dart';
+import 'package:oman_resturant/core/routing/routes.dart';
+import 'package:oman_resturant/features/app_layout/presentation/pages/app_layout.dart';
+import 'package:oman_resturant/features/meal/presentation/pages/meal_details_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
