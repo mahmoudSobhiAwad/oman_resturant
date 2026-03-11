@@ -1,4 +1,4 @@
-import 'package:app_core/core/utils/extensions/money_format.dart';
+import 'package:task_app/core/utils/extensions/money_format.dart';
 
 import '../../core/utils/theme/app_colors.dart';
 import '../../core/utils/theme/custom_app_font_styles.dart';

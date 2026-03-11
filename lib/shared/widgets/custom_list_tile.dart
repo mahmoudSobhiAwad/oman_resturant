@@ -1,5 +1,4 @@
 import '../../../core/utils/theme/app_colors.dart';
-import '../../../core/utils/theme/app_icons.dart';
 import '../../../core/utils/theme/custom_app_font_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-import '../routing/app_router.dart';
-import '../routing/routes.dart';
 import '../storage/cache_helper.dart';
 import '../utils/constants/app_constants.dart';
 import 'end_points.dart';

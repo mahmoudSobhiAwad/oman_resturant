@@ -50,7 +50,6 @@ abstract class EndPoints {
   static String reviewCounts = 'reviews/count';
   static String createOrder = 'order';
   static String payment = 'payments';
-  static String googleMapKey = 'AIzaSyARJKYuZLAoUWO0M68tJLDrbUjAz57FaGA';
   static String driverOrderSummary = 'orders/count';
   static String confige = 'configs';
   static String cities = 'cities';

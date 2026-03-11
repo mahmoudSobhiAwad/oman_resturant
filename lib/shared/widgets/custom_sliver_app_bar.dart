@@ -1,7 +1,7 @@
-import 'package:app_core/core/utils/theme/app_colors.dart';
-import 'package:app_core/core/utils/theme/app_gradient.dart';
-import 'package:app_core/shared/widgets/custom_cached_image.dart';
-import 'package:app_core/shared/widgets/custom_liquid_button.dart';
+import 'package:task_app/core/utils/theme/app_colors.dart';
+import 'package:task_app/core/utils/theme/app_gradient.dart';
+import 'package:task_app/shared/widgets/custom_cached_image.dart';
+import 'package:task_app/shared/widgets/custom_liquid_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

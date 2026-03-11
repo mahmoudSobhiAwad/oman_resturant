@@ -1,11 +1,11 @@
-import 'package:app_core/core/animation/scale_transition_animation.dart';
-import 'package:app_core/core/utils/theme/app_colors.dart';
-import 'package:app_core/core/utils/theme/custom_app_font_styles.dart';
-import 'package:app_core/features/meal/presentation/widgets/custom_meal_preparation_item.dart';
-import 'package:app_core/features/meal/presentation/widgets/meal_details_bottom_nav.dart';
-import 'package:app_core/shared/widgets/custom_sliver_app_bar.dart';
-import 'package:app_core/shared/widgets/custom_shader_text.dart';
-import 'package:app_core/shared/widgets/expandable_text.dart';
+import 'package:task_app/core/animation/scale_transition_animation.dart';
+import 'package:task_app/core/utils/theme/app_colors.dart';
+import 'package:task_app/core/utils/theme/custom_app_font_styles.dart';
+import 'package:task_app/features/meal/presentation/widgets/custom_meal_preparation_item.dart';
+import 'package:task_app/features/meal/presentation/widgets/meal_details_bottom_nav.dart';
+import 'package:task_app/shared/widgets/custom_sliver_app_bar.dart';
+import 'package:task_app/shared/widgets/custom_shader_text.dart';
+import 'package:task_app/shared/widgets/expandable_text.dart';
 import 'package:flutter/material.dart';
 
 class MealDetailsView extends StatefulWidget {

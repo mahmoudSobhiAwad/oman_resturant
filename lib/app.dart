@@ -1,12 +1,9 @@
 import 'dart:ui';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/utils/theme/app_theme.dart';
-
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

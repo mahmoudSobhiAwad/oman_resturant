@@ -1,4 +1,4 @@
-# app_core
+# task_app
 
 A new Flutter project.
 

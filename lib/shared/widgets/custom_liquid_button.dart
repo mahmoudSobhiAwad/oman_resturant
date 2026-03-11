@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:app_core/core/utils/theme/app_colors.dart';
+import 'package:task_app/core/utils/theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomLiquidContainer extends StatelessWidget {

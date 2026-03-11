@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../core/utils/theme/app_icons.dart';
 
 class StarRating extends StatelessWidget {
   final num rating;

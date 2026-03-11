@@ -1,7 +1,6 @@
-import 'package:app_core/shared/widgets/custom_asset_image.dart';
+import 'package:task_app/shared/widgets/custom_asset_image.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/api/end_points.dart';
 import '../../core/utils/theme/app_colors.dart';
