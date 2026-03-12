@@ -137,9 +137,9 @@ class CustomTextFormField extends StatelessWidget {
                   headerText!,
                   style:
                       headerTextStyle ??
-                      CustomAppFontStyle.light16.copyWith(
-                        color: AppColors.darkBlue3A,
-                      ),
+                      CustomAppFontStyle.light16(
+                        context,
+                      ).copyWith(color: AppColors.darkBlue3A),
                 ),
               ),
               if (besideHeader != null) besideHeader!,
@@ -183,7 +183,7 @@ class CustomTextFormField extends StatelessWidget {
               cursorColor: AppColors.primary,
               style:
                   textStyle ??
-                  CustomAppFontStyle.regular16.copyWith(fontSize: 14),
+                  CustomAppFontStyle.regular16(context).copyWith(fontSize: 14),
               onFieldSubmitted: onFieldSubmitted,
               decoration: InputDecoration(
                 fillColor: WidgetStateColor.resolveWith((states) {
@@ -205,9 +205,9 @@ class CustomTextFormField extends StatelessWidget {
                 hintText: hintText,
                 hintStyle:
                     hintStyle ??
-                    CustomAppFontStyle.light16.copyWith(
-                      color: AppColors.gray71,
-                    ),
+                    CustomAppFontStyle.light16(
+                      context,
+                    ).copyWith(color: AppColors.gray71),
                 contentPadding:
                     contentPadding ??
                     const EdgeInsetsDirectional.only(
@@ -220,12 +220,14 @@ class CustomTextFormField extends StatelessWidget {
                 labelText: label,
                 labelStyle:
                     labelStyle ??
-                    CustomAppFontStyle.regular14.copyWith(
-                      color: AppColors.gray92,
-                    ),
+                    CustomAppFontStyle.regular14(
+                      context,
+                    ).copyWith(color: AppColors.gray92),
                 errorStyle:
                     errorStyle ??
-                    CustomAppFontStyle.regular12.copyWith(color: AppColors.red),
+                    CustomAppFontStyle.regular12(
+                      context,
+                    ).copyWith(color: AppColors.red),
                 focusColor: Colors.black,
                 suffixIcon: suffixWidget,
                 suffixText: suffixText,
@@ -273,9 +275,9 @@ class CustomTextFormField extends StatelessWidget {
             bottomText!,
             style:
                 headerTextStyle ??
-                CustomAppFontStyle.light16.copyWith(
-                  color: AppColors.darkBlue3A,
-                ),
+                CustomAppFontStyle.light16(
+                  context,
+                ).copyWith(color: AppColors.darkBlue3A),
           ),
       ],
     );

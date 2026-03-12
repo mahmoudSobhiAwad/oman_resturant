@@ -75,9 +75,9 @@ class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       textDirection: textDirection,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: CustomAppFontStyle.regular16.copyWith(
-                        color: AppColors.gray46,
-                      ),
+                      style: CustomAppFontStyle.regular16(
+                        context,
+                      ).copyWith(color: AppColors.gray46),
                     ),
                   ),
                 ),

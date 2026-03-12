@@ -51,7 +51,7 @@ class CustomEmptyWidget extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             title ?? "",
-            style: textStyle ?? CustomAppFontStyle.regular16,
+            style: textStyle ?? CustomAppFontStyle.regular16(context),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
@@ -69,10 +69,10 @@ class CustomEmptyWidget extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Center(
                 child: Text(
-                  buttonTitle ?? "تسوق الآن",
-                  style: CustomAppFontStyle.semiBold16.copyWith(
-                    color: AppColors.white,
-                  ),
+                  buttonTitle ?? "",
+                  style: CustomAppFontStyle.semiBold16(
+                    context,
+                  ).copyWith(color: AppColors.white),
                 ),
               ),
             ),

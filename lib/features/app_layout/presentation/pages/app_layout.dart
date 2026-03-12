@@ -1,147 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:go_router/go_router.dart';
-import 'package:oman_resturant/core/animation/fade_transition_animation.dart';
-import 'package:oman_resturant/core/animation/scale_transition_animation.dart';
-import 'package:oman_resturant/core/routing/routes.dart';
-import 'package:oman_resturant/core/utils/extensions/sliver_to_widget.dart';
-import 'package:oman_resturant/core/utils/theme/app_colors.dart';
-import 'package:oman_resturant/core/utils/theme/app_icons.dart';
-import 'package:oman_resturant/core/utils/theme/app_images.dart';
-import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
-import 'package:oman_resturant/features/app_layout/presentation/widgets/atmosphere_slider.dart';
-import 'package:oman_resturant/features/app_layout/presentation/widgets/custom_meal_card.dart';
-import 'package:oman_resturant/shared/widgets/custom_asset_image.dart';
-import 'package:oman_resturant/shared/widgets/custom_liquid_button.dart';
-import 'package:oman_resturant/shared/widgets/custom_shader_text.dart';
-import 'package:oman_resturant/shared/widgets/custom_sliver_app_bar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oman_resturant/core/dependency_injection/dependency_injection.dart';
+import 'package:oman_resturant/features/app_layout/domain/use_cases/get_atmospheres_use_case.dart';
+import 'package:oman_resturant/features/app_layout/domain/use_cases/get_restaurant_about_use_case.dart';
+import 'package:oman_resturant/features/app_layout/presentation/cubit/app_layout_cubit.dart';
+import 'package:oman_resturant/features/app_layout/presentation/widgets/app_layout_body.dart';
+import 'package:oman_resturant/features/meal/domain/use_cases/get_meals_use_case.dart';
 
-class AppLayout extends StatefulWidget {
+class AppLayout extends StatelessWidget {
   const AppLayout({super.key});
 
   @override
-  State<AppLayout> createState() => _AppLayoutState();
-}
-
-class _AppLayoutState extends State<AppLayout> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          CustomSliverAppBar(
-            image: CustomAssetImage(
-              path: AppImages.layoutCover,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-            leadingWidth: double.infinity,
-            leading: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 4,
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomLiquidContainer(
-                    raduis: 24,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.arrow_back),
-                    ),
-                  ),
-                  CustomAssetImage(
-                    path: AppIcons.person,
-                    width: 38,
-                    height: 38,
-                    color: AppColors.white,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            sliver: SliverToBoxAdapter(
-              child: Column(
-                spacing: 4,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ScaleTransitionAnimation(
-                    duration: const Duration(milliseconds: 400),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Lorem",
-                          style: CustomAppFontStyle.bold10.copyWith(
-                            color: AppColors.white.withValues(alpha: 0.80),
-                          ),
-                        ),
-                        const CustomShaderText(
-                          title: "CEANO",
-                          fontStyle: CustomAppFontStyle.bold22,
-                        ),
-                      ],
-                    ),
-                  ),
-                  FadeTransitionAnimation(
-                    duration: const Duration(milliseconds: 500),
-                    child: Text(
-                      '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ''',
-                      style: CustomAppFontStyle.medium12.copyWith(
-                        color: AppColors.white.withValues(alpha: 0.7),
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: 16).toSliver(),
-          const AtompsphereSlider().toSliver(),
-          const SizedBox(height: 16).toSliver(),
-
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            sliver: SliverMainAxisGroup(
-              slivers: [
-                Text(
-                  "Food Menu",
-                  style: CustomAppFontStyle.bold11.copyWith(
-                    color: AppColors.white.withValues(alpha: 0.81),
-                  ),
-                ).toSliver(),
-                const SizedBox(height: 8).toSliver(),
-                SliverMasonryGrid.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 6,
-                  crossAxisSpacing: 7,
-
-                  itemBuilder: (context, index) {
-                    final isShort = index % 4 == 0 || index % 4 == 3;
-                    return GestureDetector(
-                      onTap: () {
-                        context.push(AppRouter.mealDetails);
-                      },
-                      child: CustomMealCard(
-                        height: isShort ? 120 : 170,
-                        width: 200,
-                        isTrending: index % 2 == 0,
-                      ),
-                    );
-                  },
-                  childCount: 8,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: kBottomNavigationBarHeight).toSliver(),
-        ],
-      ),
+    return BlocProvider(
+      create: (context) => AppLayoutCubit(
+        getAtmospheresUseCase: getIt.get<GetAtmospheresUseCase>(),
+        getRestaurantAboutUseCase: getIt.get<GetRestaurantAboutUseCase>(),
+        getMealsUseCase: getIt.get<GetMealsUseCase>(),
+      )..loadAllData(),
+      child: Scaffold(body: AppLayoutBody()),
     );
   }
 }

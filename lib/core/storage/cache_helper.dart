@@ -1,11 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-const String token = 'token';
-const String skipLogin = 'skip';
-const String userPrefs = 'user';
-const String prefsOnBoarding = 'onBoarding';
-const String language = 'language';
-
 class AppSharedPreferences {
   static late SharedPreferences sharedPreferences;
 

@@ -91,7 +91,7 @@ class CustomPushButton extends StatelessWidget {
                       ),
                     )
                   : label != null
-                  ? Text(label!, style: CustomAppFontStyle.regular14)
+                  ? Text(label!, style: CustomAppFontStyle.regular14(context))
                   : child,
             ),
           ),

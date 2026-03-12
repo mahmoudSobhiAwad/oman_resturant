@@ -13,7 +13,7 @@ class CustomCachedImage extends StatelessWidget {
     this.height,
     required this.imagePath,
     this.fit,
-    this.fromApi = true,
+    this.fromApi = false,
     this.colorTint,
     this.blendMode,
     this.isFromSlider = false,
@@ -62,6 +62,10 @@ class CustomCachedImage extends StatelessWidget {
         imageUrl: fromApi ? '${EndPoints.baseImageUrl}/$imagePath' : imagePath,
         fadeInDuration: const Duration(milliseconds: 300),
         errorListener: (value) {},
+        memCacheHeight: 1024,
+        maxWidthDiskCache: 1024,
+        memCacheWidth: 1024,
+        maxHeightDiskCache: 1024,
         errorWidget: (context, url, error) => Container(
           width: width,
           height: height,
@@ -94,7 +98,7 @@ class CustomCachedImage extends StatelessWidget {
                 fit: BoxFit.scaleDown,
                 child: CircularProgressIndicator(
                   value: progress.progress,
-                  color: AppColors.black,
+                  color: AppColors.white,
                   strokeCap: StrokeCap.round,
                 ),
               ),

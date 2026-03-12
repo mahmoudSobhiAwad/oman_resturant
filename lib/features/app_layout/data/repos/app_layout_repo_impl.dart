@@ -13,6 +13,8 @@ class AppLayoutRepoImpl implements AppLayoutRepo {
   @override
   Future<Either<Failures, ResturantAboutModel>> getRestaurantAbout() async {
     try {
+      await Future.delayed(Duration(seconds: 2));
+
       final result = jsonDecode(
         await rootBundle.loadString(AppConstants.resturantAbout),
       );
@@ -26,6 +28,8 @@ class AppLayoutRepoImpl implements AppLayoutRepo {
   @override
   Future<Either<Failures, List<AtmosphereModel>>> getAtmospheres() async {
     try {
+      await Future.delayed(Duration(seconds: 2));
+
       final result = jsonDecode(
         await rootBundle.loadString(AppConstants.atmospheresPath),
       );

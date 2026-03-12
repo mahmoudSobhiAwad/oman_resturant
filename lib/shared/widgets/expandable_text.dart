@@ -32,7 +32,9 @@ class ExpandableTextState extends State<ExpandableText> {
             widget.text,
             style:
                 widget.style ??
-                CustomAppFontStyle.regular10.copyWith(color: AppColors.gray88),
+                CustomAppFontStyle.regular10(
+                  context,
+                ).copyWith(color: AppColors.gray88),
             maxLines: isExpanded ? null : widget.maxLines,
             overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
           ),
@@ -48,7 +50,7 @@ class ExpandableTextState extends State<ExpandableText> {
               padding: const EdgeInsets.only(top: 4.0),
               child: Text(
                 isExpanded ? "Show Less" : "Show More",
-                style: CustomAppFontStyle.regular10.copyWith(
+                style: CustomAppFontStyle.regular10(context).copyWith(
                   color: AppColors.white,
                   decoration: TextDecoration.underline,
                 ),

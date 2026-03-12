@@ -165,9 +165,9 @@ class CustomSelectorFieldState<T> extends State<CustomSelectorField<T>>
                               ),
                               child: Text(
                                 widget.itemAsString(item),
-                                style: CustomAppFontStyle.regular16.copyWith(
-                                  color: AppColors.black,
-                                ),
+                                style: CustomAppFontStyle.regular16(
+                                  context,
+                                ).copyWith(color: AppColors.black),
                               ),
                             ),
                           );

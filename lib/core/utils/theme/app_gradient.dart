@@ -24,19 +24,4 @@ class AppGradient {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
-
-  static const Gradient cover = LinearGradient(
-    colors: [
-      Color(0xFFC6C3C3),
-      Color(0xFFB6B5B5),
-      Color(0xFFE0E0E0),
-
-      Color(0xFFE0E0E0),
-      Color(0xFFB6B5B5),
-      Color(0xFFC6C3C3),
-    ],
-
-    begin: Alignment.centerLeft,
-    end: Alignment.centerRight,
-  );
 }

@@ -23,7 +23,9 @@ class SectionHeaderWithAction extends StatelessWidget {
       children: [
         Text(
           title,
-          style: CustomAppFontStyle.medium18.copyWith(color: AppColors.primary),
+          style: CustomAppFontStyle.medium18(
+            context,
+          ).copyWith(color: AppColors.primary),
         ),
         if (showButton)
           TextButton(
@@ -42,7 +44,7 @@ class SectionHeaderWithAction extends StatelessWidget {
               children: [
                 Text(
                   "عرض الكل",
-                  style: CustomAppFontStyle.medium14.copyWith(
+                  style: CustomAppFontStyle.medium14(context).copyWith(
                     // height: 1.5,
                     color: AppColors.primary,
                   ),

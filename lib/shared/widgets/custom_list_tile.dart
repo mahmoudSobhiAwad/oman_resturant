@@ -123,7 +123,7 @@ class CustomListTile extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             style:
                                 titleTextStyle ??
-                                CustomAppFontStyle.regular16.copyWith(
+                                CustomAppFontStyle.regular16(context).copyWith(
                                   color: titleColor ?? AppColors.gray6C,
                                 ),
                           ),
@@ -134,7 +134,9 @@ class CustomListTile extends StatelessWidget {
                           subtitle!,
                           maxLines: 2,
                           textDirection: subtitleTextDirection,
-                          style: subTitleStyle ?? CustomAppFontStyle.light14,
+                          style:
+                              subTitleStyle ??
+                              CustomAppFontStyle.light14(context),
                         ),
                       if (expantionWidget != null) expantionWidget!,
                     ],

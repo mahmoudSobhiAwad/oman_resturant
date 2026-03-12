@@ -9,6 +9,7 @@ class MealModel extends Equatable {
   final bool isTrending;
   final bool isMainDish;
   final bool isPriceIncludeService;
+  final String? description;
   final List<PreparationModel> preparation;
 
   const MealModel({
@@ -20,6 +21,7 @@ class MealModel extends Equatable {
     this.name,
     this.isPriceIncludeService = false,
     this.preparation = const [],
+    this.description,
   });
   factory MealModel.fromJson(Map<String, dynamic> json) {
     return MealModel(
@@ -35,6 +37,7 @@ class MealModel extends Equatable {
           : [],
       id: json['id'],
       name: json['name'],
+      description: json['description'],
     );
   }
   @override
@@ -47,5 +50,6 @@ class MealModel extends Equatable {
     id,
     name,
     preparation,
+    description,
   ];
 }

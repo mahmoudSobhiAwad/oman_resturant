@@ -1,90 +1,33 @@
-import 'package:oman_resturant/core/animation/scale_transition_animation.dart';
-import 'package:oman_resturant/core/utils/theme/app_colors.dart';
-import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
-import 'package:oman_resturant/features/meal/presentation/widgets/custom_meal_preparation_item.dart';
-import 'package:oman_resturant/features/meal/presentation/widgets/meal_details_bottom_nav.dart';
-import 'package:oman_resturant/shared/widgets/custom_sliver_app_bar.dart';
-import 'package:oman_resturant/shared/widgets/custom_shader_text.dart';
-import 'package:oman_resturant/shared/widgets/expandable_text.dart';
+import 'package:oman_resturant/core/dependency_injection/dependency_injection.dart';
+import 'package:oman_resturant/features/meal/data/pass_param/meal_details_pass_param.dart';
+import 'package:oman_resturant/features/meal/domain/use_cases/get_meal_by_id_use_case.dart';
+import 'package:oman_resturant/features/meal/presentation/manager/meal_details_cubit.dart';
+import 'package:oman_resturant/features/meal/presentation/widgets/meal_details_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oman_resturant/features/meal/presentation/widgets/meal_details_bottom_nav.dart';
 
-class MealDetailsView extends StatefulWidget {
-  const MealDetailsView({super.key});
+class MealDetailsView extends StatelessWidget {
+  const MealDetailsView({super.key, required this.param});
 
-  @override
-  State<MealDetailsView> createState() => _MealDetailsViewState();
-}
+  final MealDetailsPassParam param;
 
-class _MealDetailsViewState extends State<MealDetailsView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
-          ).copyWith(top: 16),
-          child: MealDetailsBottomNav(),
-        ),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          CustomSliverAppBar(),
-          SliverPadding(
-            padding: const EdgeInsetsDirectional.only(start: 15.0, end: 31.0),
-            sliver: SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Main Course",
-                    style: CustomAppFontStyle.bold10.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.6),
-                    ),
-                  ),
-                  CustomShaderText(
-                    title: "Tenderloin Beef",
-                    fontStyle: CustomAppFontStyle.bold20.copyWith(
-                      color: AppColors.white,
-                    ),
-                  ),
-                  SizedBox(height: 6),
-                  ExpandableText(
-                    text: "text " * 100,
-                    maxLines: 6,
-                    style: CustomAppFontStyle.medium14.copyWith(
-                      color: AppColors.white,
-                    ),
-                  ),
-                  SizedBox(height: 14),
-                  Text(
-                    "Preparation",
-                    style: CustomAppFontStyle.bold10.copyWith(
-                      color: AppColors.white.withValues(alpha: 0.6),
-                    ),
-                  ),
-                  SizedBox(height: 9),
+    return BlocProvider(
+      create: (context) => MealDetailsCubit(
+        getMealByIdUseCase: getIt.get<GetMealByIdUseCase>(),
+        mealDetailsPassParam: param,
+      )..checkInitModel(),
 
-                  Wrap(
-                    spacing: 4,
-                    runSpacing: 4,
-                    children: [
-                      ...List.generate(
-                        10,
-                        (index) => ScaleTransitionAnimation(
-                          duration: const Duration(milliseconds: 500),
-                          child: const CustomMealPreparationItem(
-                            title: "20 Minutes",
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+      child: const Scaffold(
+        body: MealDetailsBody(),
+        bottomNavigationBar: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: MealDetailsBottomNav(),
           ),
-        ],
+        ),
       ),
     );
   }

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
-
 class CustomTwoOptionDialog extends StatelessWidget {
   const CustomTwoOptionDialog({
     super.key,
@@ -59,7 +58,7 @@ class CustomTwoOptionDialog extends StatelessWidget {
             if (contentWidget != null) const SizedBox(height: 16),
             Text(
               title,
-              style: titleTextStyle ?? CustomAppFontStyle.regular14,
+              style: titleTextStyle ?? CustomAppFontStyle.regular14(context),
               textAlign: titleTextAlign,
             ),
             const SizedBox(height: 16),
@@ -75,9 +74,9 @@ class CustomTwoOptionDialog extends StatelessWidget {
                         cancelTitle ?? "إلغاء",
                         style:
                             cancelTitleTextStyle ??
-                            CustomAppFontStyle.regular12.copyWith(
-                              color: AppColors.gray4A,
-                            ),
+                            CustomAppFontStyle.regular12(
+                              context,
+                            ).copyWith(color: AppColors.gray4A),
                       ),
                     ),
                 const SizedBox(width: 15),
@@ -92,7 +91,10 @@ class CustomTwoOptionDialog extends StatelessWidget {
                       spacing: 8,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(buttonTitle, style: CustomAppFontStyle.medium16),
+                        Text(
+                          buttonTitle,
+                          style: CustomAppFontStyle.medium16(context),
+                        ),
 
                         if (iconPathBeside != null)
                           SvgPicture.asset(

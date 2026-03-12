@@ -2,113 +2,193 @@
   {
     "id": "1",
     "name": "Sushi Boat",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/17010909/pexels-photo-17010909.jpeg",
     "price": 49.95,
     "is_trending": true,
     "is_main_dish": true,
+    "description": "A stunning 25-piece sushi boat crafted with premium sashimi-grade salmon, tuna, and yellowtail. Each roll is hand-pressed with seasoned Japanese rice and wrapped in toasted nori, served with pickled ginger, wasabi, and house ponzu sauce.",
     "is_price_include_service": false,
     "preparation": [
-      { "id": "1", "name": "Prepare Rice" },
-      { "id": "2", "name": "Slice Fish" },
-      { "id": "3", "name": "Roll & Plate" }
+      {
+        "id": "1",
+        "name": "Prepare Rice"
+      },
+      {
+        "id": "2",
+        "name": "Slice Fish"
+      },
+      {
+        "id": "3",
+        "name": "Roll & Plate"
+      }
     ]
   },
   {
     "id": "2",
     "name": "Grilled Salmon",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/3763847/pexels-photo-3763847.jpeg",
     "price": 34.50,
     "is_trending": false,
     "is_main_dish": true,
+    "description": "Norwegian Atlantic salmon fillet marinated in lemon herb butter, grilled over open flame to a perfect medium. Served alongside roasted seasonal vegetables, garlic mashed potatoes, and a light dill cream sauce.",
     "is_price_include_service": true,
     "preparation": [
-      { "id": "1", "name": "Marinate" },
-      { "id": "2", "name": "Grill" },
-      { "id": "3", "name": "Plate & Serve" }
+      {
+        "id": "1",
+        "name": "Marinate"
+      },
+      {
+        "id": "2",
+        "name": "Grill"
+      },
+      {
+        "id": "3",
+        "name": "Plate & Serve"
+      }
     ]
   },
   {
     "id": "3",
     "name": "Wagyu Tenderloin",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg",
     "price": 89.00,
     "is_trending": true,
     "is_main_dish": true,
+    "description": "A5 Japanese Wagyu tenderloin, richly marbled and slow-cooked to melt-in-your-mouth perfection. Finished with a red wine reduction, truffle butter, and served with pomme purée and charred broccolini.",
     "is_price_include_service": false,
     "preparation": [
-      { "id": "1", "name": "Season Meat" },
-      { "id": "2", "name": "Slow Cook" },
-      { "id": "3", "name": "Rest & Slice" }
+      {
+        "id": "1",
+        "name": "Season Meat"
+      },
+      {
+        "id": "2",
+        "name": "Slow Cook"
+      },
+      {
+        "id": "3",
+        "name": "Rest & Slice"
+      }
     ]
   },
   {
     "id": "4",
     "name": "Truffle Risotto",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/7133562/pexels-photo-7133562.jpeg",
     "price": 27.00,
     "is_trending": false,
     "is_main_dish": false,
+    "description": "Creamy Arborio rice slow-stirred with aged Parmigiano-Reggiano, dry white wine, and finished with shaved black Périgord truffle. A luxurious vegetarian dish with deep earthy aroma and velvety texture.",
     "is_price_include_service": true,
     "preparation": [
-      { "id": "1", "name": "Toast Rice" },
-      { "id": "2", "name": "Add Broth" },
-      { "id": "3", "name": "Finish with Truffle" }
+      {
+        "id": "1",
+        "name": "Toast Rice"
+      },
+      {
+        "id": "2",
+        "name": "Add Broth"
+      },
+      {
+        "id": "3",
+        "name": "Finish with Truffle"
+      }
     ]
   },
   {
     "id": "5",
     "name": "Omani Shuwa Lamb",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/323682/pexels-photo-323682.jpeg",
     "price": 42.00,
     "is_trending": true,
     "is_main_dish": true,
+    "description": "A celebrated Omani delicacy — whole lamb leg rubbed with a secret blend of saffron, cardamom, and rose water, wrapped in banana leaves and slow-cooked underground for 12 hours. Served with saffron rice and Omani khubz bread.",
     "is_price_include_service": false,
     "preparation": [
-      { "id": "1", "name": "Marinate with Spices" },
-      { "id": "2", "name": "Wrap in Banana Leaves" },
-      { "id": "3", "name": "Slow Cook Underground" }
+      {
+        "id": "1",
+        "name": "Marinate with Spices"
+      },
+      {
+        "id": "2",
+        "name": "Wrap in Banana Leaves"
+      },
+      {
+        "id": "3",
+        "name": "Slow Cook Underground"
+      }
     ]
   },
   {
     "id": "6",
     "name": "Chocolate Lava Cake",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg",
     "price": 18.00,
     "is_trending": false,
     "is_main_dish": false,
+    "description": "Warm 70% Valrhona dark chocolate fondant with a molten flowing center, dusted with cocoa powder and served with a quenelle of Madagascar vanilla bean ice cream and fresh raspberry coulis.",
     "is_price_include_service": true,
     "preparation": [
-      { "id": "1", "name": "Mix Batter" },
-      { "id": "2", "name": "Bake" },
-      { "id": "3", "name": "Plate with Ice Cream" }
+      {
+        "id": "1",
+        "name": "Mix Batter"
+      },
+      {
+        "id": "2",
+        "name": "Bake"
+      },
+      {
+        "id": "3",
+        "name": "Plate with Ice Cream"
+      }
     ]
   },
   {
     "id": "7",
     "name": "Lobster Bisque",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/2410606/pexels-photo-2410606.jpeg",
     "price": 22.00,
     "is_trending": true,
     "is_main_dish": false,
+    "description": "Velvety bisque crafted from whole Maine lobster, slow-simmered with cognac, tarragon, and heavy cream. Garnished with a poached lobster claw, crème fraîche swirl, and micro chervil.",
     "is_price_include_service": false,
     "preparation": [
-      { "id": "1", "name": "Cook Lobster" },
-      { "id": "2", "name": "Blend Bisque" },
-      { "id": "3", "name": "Garnish & Serve" }
+      {
+        "id": "1",
+        "name": "Cook Lobster"
+      },
+      {
+        "id": "2",
+        "name": "Blend Bisque"
+      },
+      {
+        "id": "3",
+        "name": "Garnish & Serve"
+      }
     ]
   },
   {
     "id": "8",
     "name": "Caesar Salad",
-    "image": "https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=",
+    "image": "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg",
     "price": 16.50,
     "is_trending": false,
     "is_main_dish": false,
+    "description": "Crisp hearts of romaine tossed in a classic house Caesar dressing made with anchovy, egg yolk, and aged Parmigiano. Topped with house-baked sourdough croutons, shaved Pecorino, and cracked black pepper.",
     "is_price_include_service": true,
     "preparation": [
-      { "id": "1", "name": "Prepare Dressing" },
-      { "id": "2", "name": "Toss Lettuce" },
-      { "id": "3", "name": "Add Croutons & Cheese" }
+      {
+        "id": "1",
+        "name": "Prepare Dressing"
+      },
+      {
+        "id": "2",
+        "name": "Toss Lettuce"
+      },
+      {
+        "id": "3",
+        "name": "Add Croutons & Cheese"
+      }
     ]
   }
 ]

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:oman_resturant/core/routing/routes.dart';
 import 'package:oman_resturant/features/app_layout/presentation/pages/app_layout.dart';
+import 'package:oman_resturant/features/meal/data/pass_param/meal_details_pass_param.dart';
 import 'package:oman_resturant/features/meal/presentation/pages/meal_details_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -220,14 +221,17 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRouter.mealDetails,
       name: AppRouter.mealDetails,
-      pageBuilder: (context, state) => buildAnimatedPage(
-        key: state.pageKey,
-        child: const MealDetailsView(),
-        animationType: checkIsIOS()
-            ? AnimationType.cupertino
-            : AnimationType.slideFromRight,
-        duration: const Duration(milliseconds: 500),
-      ),
+      pageBuilder: (context, state) {
+        final param = state.extra as MealDetailsPassParam;
+        return buildAnimatedPage(
+          key: state.pageKey,
+          child: MealDetailsView(param: param),
+          animationType: checkIsIOS()
+              ? AnimationType.cupertino
+              : AnimationType.slideFromRight,
+          duration: const Duration(milliseconds: 500),
+        );
+      },
     ),
   ],
 );

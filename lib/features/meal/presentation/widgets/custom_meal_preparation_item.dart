@@ -17,7 +17,9 @@ class CustomMealPreparationItem extends StatelessWidget {
       padding: EdgeInsetsDirectional.symmetric(horizontal: 9, vertical: 12),
       child: Text(
         title,
-        style: CustomAppFontStyle.bold10.copyWith(color: AppColors.white),
+        style: CustomAppFontStyle.bold10(
+          context,
+        ).copyWith(color: AppColors.white),
       ),
     );
   }

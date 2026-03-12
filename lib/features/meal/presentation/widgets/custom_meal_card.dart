@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:oman_resturant/core/utils/extensions/money_format.dart';
 import 'package:oman_resturant/core/utils/theme/app_colors.dart';
 import 'package:oman_resturant/core/utils/theme/app_gradient.dart';
 import 'package:oman_resturant/core/utils/theme/custom_app_font_styles.dart';
+import 'package:oman_resturant/features/meal/data/meal_model.dart';
 import 'package:oman_resturant/shared/widgets/custom_cached_image.dart';
 import 'package:oman_resturant/shared/widgets/custom_container.dart';
 import 'package:oman_resturant/shared/widgets/custom_liquid_button.dart';
@@ -13,11 +15,11 @@ class CustomMealCard extends StatelessWidget {
     super.key,
     required this.width,
     required this.height,
-    this.isTrending = false,
+    this.mealModel,
   });
   final double width;
   final double height;
-  final bool isTrending;
+  final MealModel? mealModel;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +29,12 @@ class CustomMealCard extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(9),
           child: CustomCachedImage(
-            fromApi: false,
-            imagePath:
-                'https://media.istockphoto.com/id/530417618/photo/baked-salmon-garnished-with-asparagus-and-tomatoes-with-herbs.jpg?s=2048x2048&w=is&k=20&c=2Fj8TIkqg89bKxnAVFFsR5NwHSDtayzlvHZCDlHIxbY=',
+            imagePath: mealModel?.image ?? "",
             width: width,
             height: height,
           ),
         ),
-        if (isTrending)
+        if (mealModel?.isTrending ?? true)
           Positioned.directional(
             textDirection: TextDirection.rtl,
             end: 4,
@@ -46,7 +46,10 @@ class CustomMealCard extends StatelessWidget {
                 color: AppColors.white.withValues(alpha: 0.4),
                 width: 0.5,
               ),
-              child: const Text("Trending", style: CustomAppFontStyle.medium10),
+              child: Text(
+                "Trending",
+                style: CustomAppFontStyle.medium10(context),
+              ),
             ),
           ),
         Align(
@@ -76,14 +79,20 @@ class CustomMealCard extends StatelessWidget {
             child: Row(
               spacing: 8,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Flexible(
-                  child: const Text(
-                    "25 Piece Sushi Boat with Three SIdes",
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: CustomAppFontStyle.medium10,
+                  child: Hero(
+                    tag: mealModel?.name ?? "",
+                    child: Material(
+                      type: MaterialType.transparency,
+                      child: Text(
+                        mealModel?.name ?? "",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: CustomAppFontStyle.medium10(context),
+                      ),
+                    ),
                   ),
                 ),
 
@@ -91,12 +100,11 @@ class CustomMealCard extends StatelessWidget {
                   raduis: 15,
                   child: Center(
                     child: Text(
-                      "49.95\n JOD",
+                      "${mealModel?.price?.formatMoney() ?? 0.0}\n JOD",
                       textAlign: TextAlign.center,
-                      style: CustomAppFontStyle.medium10.copyWith(
-                        color: AppColors.white,
-                        fontSize: 7,
-                      ),
+                      style: CustomAppFontStyle.medium10(
+                        context,
+                      ).copyWith(color: AppColors.white, fontSize: 7),
                     ),
                   ),
                 ),

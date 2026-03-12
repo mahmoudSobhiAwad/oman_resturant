@@ -15,6 +15,7 @@ class MealRepoImpl implements MealRepo {
       final result = jsonDecode(
         await rootBundle.loadString(AppConstants.mealPath),
       );
+      await Future.delayed(Duration(seconds: 2));
       return Right((result as List).map((e) => MealModel.fromJson(e)).toList());
     } catch (error, stackTrace) {
       log(stackTrace.toString());
@@ -25,6 +26,8 @@ class MealRepoImpl implements MealRepo {
   @override
   Future<Either<Failures, MealModel>> getMealById(String id) async {
     try {
+      await Future.delayed(Duration(seconds: 2));
+
       final result = jsonDecode(
         await rootBundle.loadString(AppConstants.mealPath),
       );

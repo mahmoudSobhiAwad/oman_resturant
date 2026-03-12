@@ -38,7 +38,9 @@ class CustomTextWithIconInCheckOut extends StatelessWidget {
           text,
           style:
               textStyle ??
-              CustomAppFontStyle.regular12.copyWith(color: AppColors.primary),
+              CustomAppFontStyle.regular12(
+                context,
+              ).copyWith(color: AppColors.primary),
         ),
         if (lastWidget != null) lastWidget!,
       ],

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_constants.dart';
 import 'app_colors.dart';
-import 'custom_app_font_styles.dart';
 
 class MyAppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -10,7 +9,6 @@ class MyAppTheme {
     highlightColor: Colors.transparent,
     timePickerTheme: const TimePickerThemeData(
       backgroundColor: AppColors.white,
-      dialTextStyle: CustomAppFontStyle.regular16,
     ),
     bannerTheme: const MaterialBannerThemeData(
       backgroundColor: AppColors.primary,
@@ -18,12 +16,7 @@ class MyAppTheme {
       padding: EdgeInsets.symmetric(vertical: 16),
       leadingPadding: EdgeInsets.symmetric(horizontal: 16),
     ),
-    datePickerTheme: const DatePickerThemeData(
-      dayStyle: CustomAppFontStyle.regular16,
-      yearStyle: CustomAppFontStyle.regular16,
-      weekdayStyle: CustomAppFontStyle.regular16,
-      backgroundColor: AppColors.white,
-    ),
+
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.grayFA,
     primaryColor: AppColors.primary,
